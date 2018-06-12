@@ -31,6 +31,11 @@
                                 <label for="email_requisitante" class="control-label">E-mail do Requisitante:</label>
                                 <input type="text" class="form-control" id="email_requisitante" name="email_requisitante" value="{{ old('email_requisitante') }}" placeholder="seuemail@exemplo.com">
                               </div>
+
+                              
+                              <!-- O Fomulario pega automaticamente o email do requisitante -->
+
+
                               <!-- <div class="form-group">
                                 <label for="data_visita" class="control-label">Data e Hora para visita:</label>
                                 <div class="form-row">
