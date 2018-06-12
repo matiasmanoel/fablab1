@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="">Quem Somos?</a>
+                    <a href="{{ ('/sobre') }}">Quem Somos?</a>
                     <a target="_blank" href="http://www.ifms.edu.br">IFMS</a>
                     <a href="{{ url('agendamento') }}">Agendamento</a>
                 </div>
