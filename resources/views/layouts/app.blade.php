@@ -38,7 +38,6 @@
             margin: 0;
             background-image: url(https://wallpaperscraft.com/image/light_faded_background_85547_2560x1600.jpg);
             background-size: auto;
-            background-attachment: fixed;
             background-repeat: no-repeat;
         }
     </style>

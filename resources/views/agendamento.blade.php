@@ -11,7 +11,7 @@
                 <!-- Latest compiled and minified JavaScript -->
                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-                <div class="card-body" style="text-align:center">
+                <div class="card-body">
                   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Novo Agendamento</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" data-whatever="@fat">Editar Agendamento</button>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">Remover Agendamento</button>
@@ -31,7 +31,7 @@
                                 <label for="email_requisitante" class="control-label">E-mail do Requisitante:</label>
                                 <input type="text" class="form-control" id="email_requisitante" name="email_requisitante" value="{{ old('email_requisitante') }}" placeholder="seuemail@exemplo.com">
                               </div>
-                              <div class="form-group">
+                              <!-- <div class="form-group">
                                 <label for="data_visita" class="control-label">Data e Hora para visita:</label>
                                 <div class="form-row">
                                 <div class="col-xs-5">
@@ -51,7 +51,7 @@
                               <div class="form-group">
                                 <label for="observacao" class="control-label">Observação:</label>
                                 <textarea class="form-control" id="observacao" name="observacao" value="{{ old('observacao  ') }}"></textarea>
-                              </div>
+                              </div> -->
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                                 <button type="submit" class="btn btn-primary">Confirmar</button>
@@ -74,7 +74,33 @@
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                           </div>
                           <div class="modal-body">
-
+                            <form>
+                              <div class="form-group">
+                                <label for="recipient-name" class="control-label">E-mail do Requisitante:</label>
+                                <input type="text" class="form-control" id="recipient-name" placeholder="seuemail@exemplo.com">
+                              </div>
+                              <div class="form-group">
+                                <label for="recipient-name" class="control-label">Data e Hora para visita:</label>
+                                <div class="form-row">
+                                <div class="col-xs-5">
+                                  <input type="date" class="form-control">
+                                </div>
+                                <div class="col-xs-3">
+                                  <input type="time" class="form-control">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="recipient-name" class="control-label">Selecione sua Impressora:</label><br>
+                              <input type="radio" name="impressora" value="1"> Impressora 1<br>
+                              <input type="radio" name="impressora" value="2"> Impressora 2<br>
+                              <input type="radio" name="impressora" value="3"> Impressora 3<br>
+                            </div>
+                              <div class="form-group">
+                                <label for="message-text" class="control-label">Observação:</label>
+                                <textarea class="form-control" id="message-text"></textarea>
+                              </div>
+                            </form>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

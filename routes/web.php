@@ -29,10 +29,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/sobre', function () {
-    return view('sobre');
-});
-
 // Route::get('/admin', function () {
 //     return view('administrador_page');
 // });
