@@ -10,5 +10,5 @@ class Agendamento extends Model
 
     protected $fillabe = [
       'descricao', 'horario', 'data', 'requerente'
-    ]
+    ];
 }

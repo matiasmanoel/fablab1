@@ -90,7 +90,7 @@
                 <div class="links">
                     <a href="">Quem Somos?</a>
                     <a target="_blank" href="http://www.ifms.edu.br">IFMS</a>
-                    <a href="{{ url('agendamento') }}">Agendamento</a>
+                    <a href="{{'/agendamento'}}">Agendamentos</a>
                 </div>
             </div>
         </div>
