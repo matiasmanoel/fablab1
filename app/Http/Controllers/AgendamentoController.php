@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-//use App\NovoAgendamento; //VER SE FUNCIONA COM OU SEM ISSO DEPOIS
+use App\Agendamento;
 
 class AgendamentoController extends Controller
 {
@@ -31,12 +31,8 @@ class AgendamentoController extends Controller
      */
     public function create(array $data)
     {
-      // return NovoAgendamento::create([
-      //     'email_requisitante' => $data['email_requisitante'],
-      //     'data_visita' => $data['data_visita'],
-      //     'hora_visita' => $data['hora_visita'],
-      //     'observacao' => $data['observacao']
-      // ]);
+      $agendamento = new Agendamento;
+      return view('agendamento/create')->with(['agendamento' => $agendamento]);
     }
 
     /**
@@ -47,12 +43,26 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-      ////Pega todos os dados que vem do formulário
-      //$dataForm = $request->all();
-      //FAZ O CADASTRO
 
+      $agendamento = new Agendamento;
 
+      $this->validate($request, [
 
+      'descricao' => 'required',
+
+      'horario' => 'required',
+
+      'data' => 'required',
+
+      'requerente' => 'required'
+
+      ]);
+
+      $agendamento->fill($request->all());
+
+      $agendamento->save();
+
+      return redirect()->route('agendamento.index');
     }
 
     /**
@@ -74,7 +84,9 @@ class AgendamentoController extends Controller
      */
     public function edit($id)
     {
-        //
+      $agendamento = Agendamento::find($id);
+
+      return view('agendamento/edit')->with(['agendamento' => $agendamento]);
     }
 
     /**
@@ -86,7 +98,16 @@ class AgendamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $agendamento = Agendamento::find($id);
+      $this->validate($request, [
+      'descricao' => 'required',
+      'horario' => 'required',
+      'data' => 'required',
+      'requerente' => 'required'
+      ]);
+      $agendamento->fill($request->all());
+      $agendamento->save();
+      return redirect()->route('agendamento.index');
     }
 
     /**
@@ -97,6 +118,8 @@ class AgendamentoController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $agendamento = Agendamento::find($id);
+      $agendamento ->delete();
+      return redirect()->route('agendamento.index');
     }
 }
