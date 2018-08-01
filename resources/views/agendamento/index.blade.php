@@ -35,7 +35,6 @@
 
   @if(Auth::user()->permissao == 0)
   <tr>
-    <th>ID</th>
     <th>Descrição</th>
     <th>Horario</th>
     <th>Data</th>
@@ -43,7 +42,6 @@
   @foreach($agendamento as $agendamento)
   @if($agendamento->requerente == Auth::user()->id)
   <tr>
-    <td>{{ $agendamento->id }}</td>
     <td>{{ $agendamento->descricao }}</td>
     <td>{{ $agendamento->horario }}</td>
     <td>{{ $agendamento->data }}</td>
