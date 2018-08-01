@@ -19,8 +19,9 @@
           {{ Form::date('data', \Carbon\Carbon::today(), ['class' => 'form-control']) }}
 
           <!-- Mudar depois e colocar pra inserir id o usuario automaticamente como requerente -->
-          {{ Form::label('Requerente**', null, ['class' => 'control-label']) }}
-          {{ Form::text('requerente', null, ['placeholder' => 'Preencha o Requerente **', 'class' => 'form-control']) }}
+          <!-- {{ Form::label('Requerente**', null, ['class' => 'control-label']) }} -->
+          <!-- {{ Form::text('requerente', null, ['placeholder' => 'Preencha o Requerente **', 'class' => 'form-control']) }} -->
+          <input name="requerente" type="hidden" value="{{Auth::user()->id}}">
       </div>
 
       {!! Form::submit("Salvar", ['class' => 'btn btn-primary']) !!}
