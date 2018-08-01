@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Agendamento;
 
+
 class AgendamentoController extends Controller
 {
     /**
@@ -12,17 +13,16 @@ class AgendamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-     //estou utilizando este construtor para restringir o acesso à "agendamento" apenas para pessoas logadas.
 
-     public function __construct()
-     {
-         $this->middleware('auth');
-     }
+     // public function __construct()
+     // {
+     //     $this->middleware('auth');
+     // }
 
     public function index()
     {
-      $agendamento = Agendamento::all();
-      return view('agendamento/index')->with(['agendamento' => $agendamento]);
+      $agendamentos = Agendamento::all();
+      return view('agendamento/index')->with(['agendamento' => $agendamentos]);
     }
 
     /**
@@ -30,10 +30,10 @@ class AgendamentoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(array $data)
+    public function create()
     {
-      $agendamento = new Agendamento;
-      return view('agendamento/create')->with(['agendamento' => $agendamento]);
+      $agendamentos = new Agendamento;
+      return view('agendamento/create')->with(['agendamento' => $agendamentos]);
     }
 
     /**
@@ -44,8 +44,7 @@ class AgendamentoController extends Controller
      */
     public function store(Request $request)
     {
-
-      $agendamento = new Agendamento;
+      $agendamentos = new Agendamento;
 
       $this->validate($request, [
 
@@ -59,9 +58,9 @@ class AgendamentoController extends Controller
 
       ]);
 
-      $agendamento->fill($request->all());
+      $agendamentos->fill($request->all());
 
-      $agendamento->save();
+      $agendamentos->save();
 
       return redirect()->route('agendamento.index');
     }
@@ -85,9 +84,9 @@ class AgendamentoController extends Controller
      */
     public function edit($id)
     {
-      $agendamento = Agendamento::find($id);
+      $agendamentos = Agendamento::find($id);
 
-      return view('agendamento/edit')->with(['agendamento' => $agendamento]);
+      return view('agendamento/edit')->with(['agendamento' => $agendamentos]);
     }
 
     /**
@@ -99,15 +98,15 @@ class AgendamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-      $agendamento = Agendamento::find($id);
+      $agendamentos = Agendamento::find($id);
       $this->validate($request, [
       'descricao' => 'required',
       'horario' => 'required',
       'data' => 'required',
       'requerente' => 'required'
       ]);
-      $agendamento->fill($request->all());
-      $agendamento->save();
+      $agendamentos->fill($request->all());
+      $agendamentos->save();
       return redirect()->route('agendamento.index');
     }
 
@@ -119,8 +118,8 @@ class AgendamentoController extends Controller
      */
     public function destroy($id)
     {
-      $agendamento = Agendamento::find($id);
-      $agendamento ->delete();
+      $agendamentos = Agendamento::find($id);
+      $agendamentos ->delete();
       return redirect()->route('agendamento.index');
     }
 }

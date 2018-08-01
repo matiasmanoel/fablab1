@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Fablab - IFMS</title>
+        <title>Laravel</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -19,9 +19,6 @@
                 font-weight: 100;
                 height: 100vh;
                 margin: 0;
-                background-image: url(https://wallpaperscraft.com/image/light_faded_background_85547_2560x1600.jpg);
-                background-size: auto;
-                background-repeat: no-repeat;
             }
 
             .full-height {
@@ -72,24 +69,22 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Painel do Usuário</a>
-                        <!-- Fazer um comando para essa área só aparecer se for o Administrador da Page -->
-                        <a href="{{ url('/admin') }}">Painel de Administrador</a>
+                        <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Entrar</a>
-                        <a href="{{ route('register') }}">Registrar</a>
+                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
             @endif
 
             <div class="content">
                 <div class="title m-b-md">
-                    Fablab
+                    Oliver Locadora
                 </div>
 
                 <div class="links">
-                    <a href="">Quem Somos?</a>
-                    <a target="_blank" href="http://www.ifms.edu.br">IFMS</a>
+                    <a href="{{'/nois'}}">Quem somos</a>
+                    <a href="{{'/local'}}">Localização</a>
                     <a href="{{'/agendamento'}}">Agendamentos</a>
                 </div>
             </div>

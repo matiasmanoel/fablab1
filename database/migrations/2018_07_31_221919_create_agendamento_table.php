@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAdministradorPagesTable extends Migration
+class CreateAgendamentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class CreateAdministradorPagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('administrador_pages', function (Blueprint $table) {
+        Schema::create('agendamento', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('descricao');
+            $table->string('horario');
+            $table->Date('data');
+            $table->string('requerente');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ class CreateAdministradorPagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('administrador_pages');
+        Schema::dropIfExists('agendamento');
     }
 }

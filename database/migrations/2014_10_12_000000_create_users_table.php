@@ -13,8 +13,6 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-      //ESSA PARTE DEVE FAZER REFERENCIA COM AS PARTES DO CÓDIGO DAS VIEWS, ONDE TEM OS IF'S E AS VALIDAÇÕES, POIS OS NOMES LÁ SÃO IGUAIS AQUI, E AQUI É A CRIAÇÃO DAS "VARIÁVEIS" QUE RECEBEM OS VALORES
-      //POR ISSO O MESMO NOME CRIADO AQUI, DEVE SER O CHAMADO LÁ, EM REGISTER.BLADE.PHP
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');

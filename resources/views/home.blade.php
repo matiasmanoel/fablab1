@@ -1,7 +1,3 @@
-<!--
-Para funcionar o background geral com o background do app.blade, tem que colocar o comando abaixo nas abas que quer modificar o backgroud,
-e alterar o background no css também, só com os dois pra funcionar
--->
 @extends('layouts.app')
 
 @section('content')
@@ -9,16 +5,16 @@ e alterar o background no css também, só com os dois pra funcionar
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Painel do Usuário</div>
+                <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
                     @if (session('status'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
 
-                    Acesso liberado!
+                    You are logged in!
                 </div>
             </div>
         </div>

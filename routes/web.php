@@ -15,32 +15,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/nois', function () {
+    return view('nois');
+});
+
+Route::get('/local', function () {
+    return view('local');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::resource('/agendamento', 'AgendamentoController');
-
-
-
-// Auth::routes();
-//
-// Route::get('/home', 'HomeController@index')->name('home');
-//
-// Auth::routes();
-//
-// Route::get('/home', 'HomeController@index')->name('home');
-//
-// Auth::routes();
-//
-// // Route::get('/admin', function () {
-// //     return view('administrador_page');
-// // });
-//
-// $this->get('admin', 'AdministradorController@index');
-//
-// // Route::match(['get', 'post'], '/agendamento', function () {
-// //     return view('agendamento');
-// // });
-// //Route::get('/agendamento', 'AgendamentoController@index')->name('agendamento');
-// $this->get('agendamento', 'AgendamentoController@index');

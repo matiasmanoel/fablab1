@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('content')
-    <!-- @include('layouts/erros_form') -->
+
     <h1>Agendamento</h1>
 
     {!! Form::model($agendamento, ['route' => 'agendamento.store'])  !!}
@@ -9,8 +9,11 @@
           {{ Form::label('Descrição', null, ['class' => 'control-label']) }}
           {{ Form::text('descricao', null, ['placeholder' => 'Preencha a Descrição', 'class' => 'form-control']) }}
 
-          {{ Form::label('Horario', null, ['class' => 'control-label']) }}
-          {{ Form::text('horario', null, ['placeholder' => 'Preencha a Data', 'class' => 'form-control']) }}
+          <!-- {{ Form::label('Horario', null, ['class' => 'control-label']) }}
+          {{ Form::text('horario', null, ['placeholder' => 'Preencha o Horario', 'class' => 'form-control']) }} -->
+
+          {!! Form::label('Horario', '* Digite o Horario: ') !!}
+          {!! Form::time('horario',null, ['class' => 'form-control']) !!}
 
           {{ Form::label('Data', null, ['class' => 'control-label']) }}
           {{ Form::date('data', \Carbon\Carbon::today(), ['class' => 'form-control']) }}
