@@ -1,6 +1,10 @@
 @extends('layouts/app')
 @section('content')
+
 <div class="container">
+  <p>
+      <a href="{{'/agendamento'}}"style="color:#343a40"><< Voltar </a>
+  </p>
     <div class="row justify-content-center">
     <h1>Editar Agendamento</h1>
     </div>
