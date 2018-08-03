@@ -102,8 +102,7 @@ class AgendamentoController extends Controller
       $this->validate($request, [
       'descricao' => 'required',
       'horario' => 'required',
-      'data' => 'required',
-      'requerente' => 'required'
+      'data' => 'required'
       ]);
       $agendamentos->fill($request->all());
       $agendamentos->save();
