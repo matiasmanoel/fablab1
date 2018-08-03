@@ -28,15 +28,15 @@
                                 </div>
                                   <div class="form-group col-md-6">
                                     <label for="name">RG: </label>
-                                      <input type="number" name="rg" id="rg" value="{{ old('name') }}" placeholder="" required autofocus>
+                                      <input type="number" class="form-control" name="rg" id="rg" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                   <div class="form-group col-md-6">
                                     <label for="name">CPF: </label>
-                                      <input type="number" name="cpf" id="cpf" value="{{ old('name') }}" placeholder="" required autofocus>
+                                      <input type="number" class="form-control" name="cpf" id="cpf" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                   <div class="form-group col-md-6">
                                     <label for="name">Órgão Expeditor: </label>
-                                      <input type="text" name="oe" id="oe" value="{{ old('name') }}" placeholder="" required autofocus>
+                                      <input type="text" class="form-control" name="oe" id="oe" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                 </div>
                                 <div class="form-group">
@@ -75,14 +75,6 @@
                               </div>
                               <div class="form-row">
                                 <div class="form-group col-md-6">
-                                  <label for="name">Telefone: </label>
-                                    <input type="text" name="telefone" id="telefone" value="{{ old('name') }}" placeholder="(XXX) XXXX XXXX" required autofocus>
-                                </div>
-                                <div class="form-group col-md-6">
-                                  <label for="name">Celular: </label>
-                                    <input type="text" name="celular" id="celular" value="{{ old('name') }}" placeholder="(XXX) X XXXX XXXX" required autofocus>
-                                </div>
-                                <div class="form-group col-md-6">
                                   <label for="inputPassword4">Bairro: </label>
                                   <input type="text" class="form-control" id="bairro" placeholder="Bairro 1 de Abril">
                                 </div>
@@ -95,7 +87,7 @@
                                   <input type="text" class="form-control" id="cidade" placeholder="Nome da Cidade">
                                 </div>
                                 <div class="form-group col-md-6">
-                                  <label for="inputState">Estado</label>
+                                  <label for="inputState">Estado: </label>
                                   <select id="estado" class="form-control">
                                     <option selected>Escolha seu Estado</option>
                                     <option>AC</option>
@@ -127,15 +119,23 @@
                                     <option>TO</option>
                                   </select>
                                 </div>
+                                <div class="form-group col-md-6">
+                                  <label for="name">Telefone: </label>
+                                    <input type="text" class="form-control" name="telefone" id="telefone" value="{{ old('name') }}" placeholder="(XXX) XXXX XXXX" required autofocus>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="name">Celular: </label>
+                                    <input type="text" class="form-control" name="celular" id="celular" value="{{ old('name') }}" placeholder="(XXX) X XXXX XXXX" required autofocus>
+                                </div>
                               </div>
                               <br>
-                        <div class="row justify-content-center">
-                            <div class="col-2">
-                                <button type="submit" class="btn btn-dark">
-                                    Registrar
-                                </button>
-                            </div>
-                        </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-2">
+                                        <button type="submit" class="btn btn-dark">
+                                            Registrar
+                                        </button>
+                                    </div>
+                                </div>
                     </form>
                 </div>
             </div>
