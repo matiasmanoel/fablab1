@@ -21,9 +21,8 @@
           {{ Form::label('Data', null, ['class' => 'control-label']) }}
           {{ Form::text('data', $agendamento->data, ['class' => 'form-control']) }}
           <br>
-          {{ Form::label('Requerente', null, ['class' => 'control-label']) }}
-          {{ Form::text('requerente', $agendamento->requerente, ['class' => 'form-control']) }}
-          <br>
+          <!-- {{ Form::label('Requerente', null, ['class' => 'control-label']) }}
+          {{ Form::text('requerente', $agendamento->requerente, ['class' => 'form-control']) }} -->
       </div>
       <div class="row justify-content-center">
         <div class="col-1">
