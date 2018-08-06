@@ -14,10 +14,10 @@ class AgendamentoController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     // public function __construct()
-     // {
-     //     $this->middleware('auth');
-     // }
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
 
     public function index()
     {
@@ -102,7 +102,8 @@ class AgendamentoController extends Controller
       $this->validate($request, [
       'descricao' => 'required',
       'horario' => 'required',
-      'data' => 'required'
+      'data' => 'required',
+      'requerente' => 'required'
       ]);
       $agendamentos->fill($request->all());
       $agendamentos->save();

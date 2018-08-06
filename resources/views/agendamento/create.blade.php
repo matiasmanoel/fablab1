@@ -30,18 +30,15 @@
           <!-- Mudar depois e colocar pra inserir id o usuario automaticamente como requerente -->
           <!-- {{ Form::label('Requerente**', null, ['class' => 'control-label']) }}
           {{ Form::text('requerente', null, ['placeholder' => 'Preencha o Requerente **', 'class' => 'form-control']) }} -->
-
           <input name="requerente" type="hidden" value="{{Auth::user()->id}}">
 
+      </div>
+      <br>
           <div class="row justify-content-center">
             <div class="col-1">
               {!! Form::submit("Salvar", ['class' => 'btn btn-dark']) !!}
               {!! Form::close() !!}
             </div>
           </div>
-
-      </div>
-      <br>
-
 </div>
 @endsection
