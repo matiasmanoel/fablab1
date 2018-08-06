@@ -27,16 +27,16 @@
                                   @endif
                                 </div>
                                   <div class="form-group col-md-6">
-                                    <label for="name">CPF: </label>
-                                      <input type="number" class="form-control" name="cpf" id="cpf" value="" placeholder="" required autofocus>
+                                    <label for="name">RG: </label>
+                                      <input type="number" name="rg" id="rg" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                   <div class="form-group col-md-6">
-                                    <label for="name">RG: </label>
-                                      <input type="number" class="form-control" name="rg" id="rg" value="" placeholder="" required autofocus>
+                                    <label for="name">CPF: </label>
+                                      <input type="number" name="cpf" id="cpf" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                   <div class="form-group col-md-6">
                                     <label for="name">Órgão Expeditor: </label>
-                                      <input type="text" class="form-control" name="oe" id="oe" value="" placeholder="" required autofocus>
+                                      <input type="text" name="oe" id="oe" value="{{ old('name') }}" placeholder="" required autofocus>
                                   </div>
                                 </div>
                                 <div class="form-group">
@@ -66,29 +66,37 @@
                               <div class="form-row">
                                 <div class="form-group col-md-6">
                                   <label for="inputAddress">Endereço: </label>
-                                  <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Rua/Avenida Exemplo de Nome">
+                                  <input type="text" class="form-control" id="endereco" placeholder="Rua/Avenida Exemplo de Nome">
                                 </div>
                                 <div class="form-group col-md-6">
                                   <label for="inputZip">CEP: </label>
-                                  <input type="text" class="form-control" id="cep" name="cep" placeholder="XXXXXX-XX">
+                                  <input type="text" class="form-control" id="cep" placeholder="XXXXXX-XX">
                                 </div>
                               </div>
                               <div class="form-row">
                                 <div class="form-group col-md-6">
+                                  <label for="name">Telefone: </label>
+                                    <input type="text" name="telefone" id="telefone" value="{{ old('name') }}" placeholder="(XXX) XXXX XXXX" required autofocus>
+                                </div>
+                                <div class="form-group col-md-6">
+                                  <label for="name">Celular: </label>
+                                    <input type="text" name="celular" id="celular" value="{{ old('name') }}" placeholder="(XXX) X XXXX XXXX" required autofocus>
+                                </div>
+                                <div class="form-group col-md-6">
                                   <label for="inputPassword4">Bairro: </label>
-                                  <input type="text" class="form-control" id="bairro" name="bairro" placeholder="Bairro 1 de Abril">
+                                  <input type="text" class="form-control" id="bairro" placeholder="Bairro 1 de Abril">
                                 </div>
                                 <div class="form-group col-md-6">
                                   <label for="inputPassword4">Número: </label>
-                                  <input type="text" class="form-control" id="numero" name="numero" placeholder="1234">
+                                  <input type="text" class="form-control" id="numero" placeholder="1234">
                                 </div>
                                 <div class="form-group col-md-6">
                                   <label for="inputCity">Cidade: </label>
-                                  <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Nome da Cidade">
+                                  <input type="text" class="form-control" id="cidade" placeholder="Nome da Cidade">
                                 </div>
                                 <div class="form-group col-md-6">
-                                  <label for="inputState">Estado: </label>
-                                  <select id="estado" name="estado" class="form-control">
+                                  <label for="inputState">Estado</label>
+                                  <select id="estado" class="form-control">
                                     <option selected>Escolha seu Estado</option>
                                     <option>AC</option>
                                     <option>AL</option>
@@ -119,28 +127,19 @@
                                     <option>TO</option>
                                   </select>
                                 </div>
-                                <div class="form-group col-md-6">
-                                  <label for="name">Telefone: </label>
-                                    <input type="text" class="form-control" name="telefone" id="telefone" value="" placeholder="(XXX) XXXX XXXX" required autofocus>
-                                </div>
-                                <div class="form-group col-md-6">
-                                  <label for="name">Celular: </label>
-                                    <input type="text" class="form-control" name="celular" id="celular" value="" placeholder="(XXX) X XXXX XXXX" required autofocus>
-                                </div>
                               </div>
                               <br>
-                                <div class="row justify-content-center">
-                                    <div class="col-2">
-                                        <button type="submit" class="btn btn-dark">
-                                            Registrar
-                                        </button>
-                                    </div>
-                                </div>
+                        <div class="row justify-content-center">
+                            <div class="col-2">
+                                <button type="submit" class="btn btn-dark">
+                                    Registrar
+                                </button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 @endsection
