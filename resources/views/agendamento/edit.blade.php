@@ -23,6 +23,7 @@
           <br>
           <!-- {{ Form::label('Requerente', null, ['class' => 'control-label']) }}
           {{ Form::text('requerente', $agendamento->requerente, ['class' => 'form-control']) }} -->
+          <input name="requerente" type="hidden" value="{{Auth::user()->id}}">
       </div>
       <div class="row justify-content-center">
         <div class="col-1">
