@@ -19,6 +19,7 @@ class CreateAgendamentoTable extends Migration
             $table->string('horario');
             $table->Date('data');
             $table->string('requerente');
+            $table->string('estado')->default('Esperando Confirmação');
             $table->timestamps();
         });
     }

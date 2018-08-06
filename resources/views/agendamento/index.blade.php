@@ -11,6 +11,7 @@
     <th>Horario</th>
     <th>Data</th>
     <th>Requerente Id</th>
+    <th>Estado</th>
   </tr>
   @foreach($agendamento as $agendamento)
   <tr>
@@ -19,6 +20,7 @@
     <td>{{ $agendamento->horario }}</td>
     <td>{{ $agendamento->data }}</td>
     <td>{{ $agendamento->requerente }}</td>
+    <td>{{ $agendamento->estado }}</td>
     <td>
       <a class="btn btn-default" href="{{ route('agendamento.edit', $agendamento) }}">alterar</a>
     </td>
@@ -38,6 +40,7 @@
     <th>Descrição</th>
     <th>Horario</th>
     <th>Data</th>
+    <th>Estado</th>
   </tr>
   @foreach($agendamento as $agendamento)
   @if($agendamento->requerente == Auth::user()->id)
@@ -45,6 +48,7 @@
     <td>{{ $agendamento->descricao }}</td>
     <td>{{ $agendamento->horario }}</td>
     <td>{{ $agendamento->data }}</td>
+    <td>{{ $agendamento->estado }}</td>
     <td>
       <a class="btn btn-default" href="{{ route('agendamento.edit', $agendamento) }}">alterar</a>
     </td>

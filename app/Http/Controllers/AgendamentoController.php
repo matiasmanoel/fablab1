@@ -54,8 +54,6 @@ class AgendamentoController extends Controller
 
       'data' => 'required',
 
-      'requerente' => 'required'
-
       ]);
 
       $agendamentos->fill($request->all());
@@ -103,7 +101,6 @@ class AgendamentoController extends Controller
       'descricao' => 'required',
       'horario' => 'required',
       'data' => 'required',
-      'requerente' => 'required'
       ]);
       $agendamentos->fill($request->all());
       $agendamentos->save();
