@@ -5,6 +5,7 @@
         <h2>Agendamentos</h2>
     </div>
 <table class="table">
+  @if(Auth::user()->permissao == 1)
   <tr>
     <th>ID</th>
     <th>Descrição</th>
