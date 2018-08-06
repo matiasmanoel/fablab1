@@ -10,33 +10,57 @@
     <th>Descrição</th>
     <th>Horario</th>
     <th>Data</th>
-    <th>Requerente</th>
-</tr>
+    <th>Requerente Id</th>
+    <th>Estado</th>
+  </tr>
   @foreach($agendamento as $agendamento)
-    <tr>
-      <td>{{ $agendamento->id }}</td>
-      <td>{{ $agendamento->descricao }}</td>
-      <td>{{ $agendamento->horario }}</td>
-      <td>{{ $agendamento->data }}</td>
-      <td>{{ $agendamento->requerente }}</td>
-      <td>
-        <div class="row justify-content-center">
-          <div class="col-1">
-            <a class="btn btn-success" href="{{ route('agendamento.edit', $agendamento) }}">Alterar</a>
-          </div>
-        </div>
-     </td>
-     <td>
-       <div class="row justify-content-center">
-         <div class="col-1">
-     {!! Form::model($agendamento, ['class' => 'delete', 'method' => 'delete', 'route' => ['agendamento.destroy', $agendamento]])  !!}
-          {!! Form::submit('Remover', ['class' => 'btn btn-success']); !!}
-        {!! Form::close() !!}
-      </div>
-    </div>
-</td>
-    </tr>
+  <tr>
+    <td>{{ $agendamento->id }}</td>
+    <td>{{ $agendamento->descricao }}</td>
+    <td>{{ $agendamento->horario }}</td>
+    <td>{{ $agendamento->data }}</td>
+    <td>{{ $agendamento->requerente }}</td>
+    <td>{{ $agendamento->estado }}</td>
+    <td>
+      <a class="btn btn-default" href="{{ route('agendamento.edit', $agendamento) }}">alterar</a>
+    </td>
+    <td>
+      {!! Form::model($agendamento, ['class' => 'delete', 'method' => 'delete', 'route' => ['agendamento.destroy', $agendamento]])  !!}
+      {!! Form::submit('remover', ['class' => 'btn btn-default']); !!}
+      {!! Form::close() !!}
+    </td>
+  </tr>
   @endforeach
+  @endif
+
+<!-- Se for um usuario mostrar -->
+
+  @if(Auth::user()->permissao == 0)
+  <tr>
+    <th>Descrição</th>
+    <th>Horario</th>
+    <th>Data</th>
+    <th>Estado</th>
+  </tr>
+  @foreach($agendamento as $agendamento)
+  @if($agendamento->requerente == Auth::user()->id)
+  <tr>
+    <td>{{ $agendamento->descricao }}</td>
+    <td>{{ $agendamento->horario }}</td>
+    <td>{{ $agendamento->data }}</td>
+    <td>{{ $agendamento->estado }}</td>
+    <td>
+      <a class="btn btn-default" href="{{ route('agendamento.edit', $agendamento) }}">alterar</a>
+    </td>
+    <td>
+      {!! Form::model($agendamento, ['class' => 'delete', 'method' => 'delete', 'route' => ['agendamento.destroy', $agendamento]])  !!}
+      {!! Form::submit('remover', ['class' => 'btn btn-default']); !!}
+      {!! Form::close() !!}
+    </td>
+  </tr>
+  @endif
+  @endforeach
+  @endif
 </table>
 <br>
     <div class="row justify-content-center">

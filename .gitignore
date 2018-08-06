@@ -3,6 +3,17 @@
 /public/storage
 /storage/*.key
 /vendor
+composer.phar
+composer.lock
+.DS_Store
+pt-br-validator.sublime-project
+pt-br-validator.sublime-workspace
+/.phpintel/
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
 /.idea
 /.vscode
 /.vagrant
