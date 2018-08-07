@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Agendamento;
 use App\User;
 use Illuminate\Support\Facades\Mail;
+use App\Http\Controllers\Auth;
 
 
 class AgendamentoController extends Controller
@@ -62,6 +63,11 @@ class AgendamentoController extends Controller
 
       $agendamentos->save();
 
+      // Mail::send('emails.aviso', [], function($message){
+      //   $message->to(Auth::user()->email);
+      //   $message->subject('Agendamento Criado');
+      // });
+
       return redirect()->route('agendamento.index');
     }
 
@@ -101,7 +107,7 @@ class AgendamentoController extends Controller
       //ALTERAR FUNÇÃO PARA ENVIAR EMAIL AVISANDO DA ALTERAÇÃO PARA O AGENDADOR
 
       $agendamentos = Agendamento::find($id);
-      $requerente = User::find($agendamentos->requerente);
+      //$requerente = User::find($agendamentos->requerente);
       $this->validate($request, [
       'descricao' => 'required',
       'horario' => 'required',
@@ -109,10 +115,10 @@ class AgendamentoController extends Controller
       ]);
       $agendamentos->fill($request->all());
       $agendamentos->save();
-      Mail::send('emails.aviso', [], function($message){
-        $message->to($requerente->email);
-        $message->subject('Estado Agendamento Atualizado');
-      });
+      // Mail::send('emails.aviso', [], function($message){
+      //   $message->to($requerente->email);
+      //   $message->subject('Estado Agendamento Atualizado');
+      // });
       return redirect()->route('agendamento.index');
     }
 
