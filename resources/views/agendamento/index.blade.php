@@ -29,6 +29,7 @@
       {!! Form::model($agendamento, ['class' => 'delete', 'method' => 'delete', 'route' => ['agendamento.destroy', $agendamento]])  !!}
       {!! Form::submit('remover', ['class' => 'btn btn-default']); !!}
       {!! Form::close() !!}
+
     </td>
   </tr>
   @endforeach

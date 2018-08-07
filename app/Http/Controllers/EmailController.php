@@ -14,13 +14,12 @@ class EmailController extends Controller
       return view('agendamento.index');
     }
 
-    public function send(){
+    public function send($email){
       // Mail::to('will.oliver.ti@outlook.com')->send(new MailConfig());
 
       Mail::send('emails.aviso', [], function($message){
-        $message->to('will.oliver.ti@outlook.com');
-        $message->subject('Assunto');
-
+        $message->to($email);
+        $message->subject('Estado Agendamento Atualizado');
       });
     }
 

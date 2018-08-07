@@ -28,4 +28,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/agendamento', 'AgendamentoController');
 
-Route::get('/mail', 'EmailController@send');
+//Route::resource('/email', 'EmailController');
