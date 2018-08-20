@@ -41,7 +41,7 @@
 
 @if(Auth::user()->permissao == 0)
 
-<input name="estado" type="hidden" value="Em Espera">
+<input name="estado" type="hidden" value="Esperando Confirmação">
 
 @endif
 

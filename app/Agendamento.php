@@ -12,4 +12,9 @@ class Agendamento extends Model
     'descricao', 'horario', 'data', 'requerente', 'estado'
   ];
 // $fillabe
+
+   public function users()
+   {
+       return $this->belongsTo('App\User');
+   }
 }
