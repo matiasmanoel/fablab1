@@ -30,6 +30,7 @@
                                     <label for="name">CPF: </label>
                                       <input type="number" class="form-control" name="cpf" id="cpf" value="" placeholder="" required autofocus>
                                   </div>
+                                  <!-- Tirar RG -->
                                   <div class="form-group col-md-6">
                                     <label for="name">RG: </label>
                                       <input type="number" class="form-control" name="rg" id="rg" value="" placeholder="" required autofocus>
