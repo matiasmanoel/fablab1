@@ -45,7 +45,7 @@
 
 @endif
 
-
+<input name="requerente" type="hidden" value="{{$agendamento->requerente}}">
 
 
 </div>
